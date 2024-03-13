@@ -1,11 +1,11 @@
 <h1 align="center">LupusNet</h1>
-<h4 align="center">	
-Lupus Nephritis Subtype Classification with only Slide Level Labels</h4>
+<h3 align="center">	
+Lupus Nephritis Subtype Classification with only Slide Level Labels</h3>
 <p align="center">
 <strong>Authors:</strong> Amit Sharma, Ekansh Chauhan, Megha S Uppin, Liza Rajasekhar, C V Jawahar, P K Vinod
 <br>
 <br>
-<a href="https://www.medrxiv.org/content/10.1101/2023.12.03.23299357v1">medRxiv</a> | <a href="https://hai.iiit.ac.in/ipd/">India Pathology Dataset Website</a> | <a href="#cite">Cite</a>
+<a href="https://www.medrxiv.org/content/10.1101/2023.12.03.23299357v1">medRxiv</a> | <a href="#cite">Cite</a>
 </p>
 <!-- <a href="https://github.com/elangosundar/awesome-README-templates/blob/master/LICENSE"><img src="https://img.shields.io/github/license/elangosundar/awesome-README-templates?color=2b9348" alt="License Badge"/></a> -->
 <hr>
@@ -18,9 +18,12 @@ Lupus Nephritis Subtype Classification with only Slide Level Labels</h4>
 ## 👨🏻‍💻 Code
 We have adapted our pipeline from [CLAM](https://github.com/mahmoodlab/CLAM?tab=readme-ov-file#reference).
 ```
+# Extract features from input glomeruli images
+CUDA_VISIBLE_DEVICES=0,1 python extract_features_fp.py --data_h5_dir DIR_TO_COORDS --data_slide_dir DATA_DIRECTORY --csv_path CSV_FILE_NAME --feat_dir FEATURES_DIRECTORY --batch_size 512 --slide_ext .svs
+
 CUDA_VISIBLE_DEVICES=0 python main.py --drop_out --early_stopping --lr 2e-4 --k 10 --label_frac 0.5 --exp_code ln4_vs_ln5_lupusnet --weighted_sample --bag_loss ce --inst_loss svm --task ln4_vs_ln5 --model_type clam_sb --log_data --data_root_dir DATA_ROOT_DIR
 ```
-
+<code>The code is under maintainence. We will soon release the full code in a digestible format</code>
 
 ## :book: Cite
 <p id="cite"></p>
