@@ -27,6 +27,9 @@ CUDA_VISIBLE_DEVICES=0 python main.py --drop_out --early_stopping --lr 2e-4 --k 
 
 ## :book: Cite
 <p id="cite"></p>
+If our work has helped your research, please consider citing it:
+<br>
+<br>
 
 ```
 @inreview{
