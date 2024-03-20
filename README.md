@@ -19,9 +19,9 @@ Lupus Nephritis Subtype Classification with only Slide Level Labels</h3>
 We have adapted our pipeline from [CLAM](https://github.com/mahmoodlab/CLAM?tab=readme-ov-file#reference).
 ```
 # Extract features from input glomeruli images
-CUDA_VISIBLE_DEVICES=0,1 python extract_features_fp.py --data_h5_dir DIR_TO_COORDS --data_slide_dir DATA_DIRECTORY --csv_path CSV_FILE_NAME --feat_dir FEATURES_DIRECTORY --batch_size 512 --slide_ext .svs
+CUDA_VISIBLE_DEVICES=0,1 python extract_glom_features_fp.py --data_h5_dir DIR_TO_COORDS --data_slide_dir DATA_DIRECTORY --csv_path CSV_FILE_NAME --feat_dir FEATURES_DIRECTORY --batch_size 512 --slide_ext .svs
 
-CUDA_VISIBLE_DEVICES=0 python main.py --drop_out --early_stopping --lr 2e-4 --k 10 --label_frac 0.5 --exp_code ln4_vs_ln5_lupusnet --weighted_sample --bag_loss ce --inst_loss svm --task ln4_vs_ln5 --model_type clam_sb --log_data --data_root_dir DATA_ROOT_DIR
+CUDA_VISIBLE_DEVICES=0 python run.py --drop_out --early_stopping --lr 2e-4 --k 10 --label_frac 0.5 --exp_code ln4_vs_ln5_lupusnet --weighted_sample --bag_loss ce --inst_loss svm --task ln4_vs_ln5 --model_type clam_sb --log_data --data_root_dir DATA_ROOT_DIR
 ```
 <!-- <code>The code is under maintainence. We will soon release the full code in a digestible format</code> -->
 
